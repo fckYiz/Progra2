@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Cliente.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Cliente.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">Cliente </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">String nombre</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String tipoCliente</span><span class="s2">;</span>
+    <span class="s0">private double </span><span class="s1">totalCompra</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">Cliente</span><span class="s2">(</span><span class="s1">String nombre</span><span class="s2">, </span><span class="s1">String tipoCliente</span><span class="s2">, </span><span class="s0">double </span><span class="s1">totalCompra</span><span class="s2">) {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">nombre </span><span class="s2">= </span><span class="s1">nombre</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">tipoCliente </span><span class="s2">= </span><span class="s1">tipoCliente</span><span class="s2">;</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">totalCompra </span><span class="s2">= </span><span class="s1">totalCompra</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">String getTipoCliente</span><span class="s2">() { </span><span class="s0">return </span><span class="s1">tipoCliente</span><span class="s2">; }</span>
+    <span class="s0">public double </span><span class="s1">getTotalCompra</span><span class="s2">() { </span><span class="s0">return </span><span class="s1">totalCompra</span><span class="s2">; }</span>
+
+    <span class="s0">public double </span><span class="s1">calcularDescuento</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">tipoCliente</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s3">&quot;premium&quot;</span><span class="s2">)) </span><span class="s0">return </span><span class="s1">totalCompra </span><span class="s2">* </span><span class="s4">0.20</span><span class="s2">;</span>
+        <span class="s0">else if </span><span class="s2">(</span><span class="s1">tipoCliente</span><span class="s2">.</span><span class="s1">equalsIgnoreCase</span><span class="s2">(</span><span class="s3">&quot;estándar&quot;</span><span class="s2">)) </span><span class="s0">return </span><span class="s1">totalCompra </span><span class="s2">* </span><span class="s4">0.10</span><span class="s2">;</span>
+        <span class="s0">return </span><span class="s4">0</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">mostrarResumen</span><span class="s2">() {</span>
+        <span class="s0">double </span><span class="s1">descuento </span><span class="s2">= </span><span class="s1">calcularDescuento</span><span class="s2">();</span>
+        <span class="s0">double </span><span class="s1">finalPagar </span><span class="s2">= </span><span class="s1">totalCompra </span><span class="s2">- </span><span class="s1">descuento</span><span class="s2">;</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Cliente: &quot; </span><span class="s2">+ </span><span class="s1">nombre </span><span class="s2">+ </span><span class="s3">&quot; (&quot; </span><span class="s2">+ </span><span class="s1">tipoCliente </span><span class="s2">+ </span><span class="s3">&quot;)&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Subtotal: $&quot; </span><span class="s2">+ </span><span class="s1">totalCompra </span><span class="s2">+ </span><span class="s3">&quot; | Descuento: $&quot; </span><span class="s2">+ </span><span class="s1">descuento </span><span class="s2">+ </span><span class="s3">&quot; | Total final: $&quot; </span><span class="s2">+ </span><span class="s1">finalPagar</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;-------------------------------------------------&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
